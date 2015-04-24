@@ -25,6 +25,7 @@ namespace MVC5W1.Models
         public string 姓名 { get; set; }
          [Required]
          [Index("EmailIndex", IsUnique = true)]
+         [EmailAddress]
         public string Email { get; set; }
         [RegularExpression("[0-9]{4}-[0-9]{6}", ErrorMessage = "電話格式錯誤")]
         public string 手機 { get; set; }

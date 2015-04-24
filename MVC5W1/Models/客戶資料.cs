@@ -11,6 +11,8 @@ namespace MVC5W1.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class 客戶資料
     {
@@ -21,11 +23,15 @@ namespace MVC5W1.Models
         }
     
         public int Id { get; set; }
+         [Required]
         public string 客戶名稱 { get; set; }
         public string 統一編號 { get; set; }
         public string 電話 { get; set; }
         public string 傳真 { get; set; }
         public string 地址 { get; set; }
+        [Required]
+        [Index("EmailIndex", IsUnique = true)]
+        [EmailAddress]
         public string Email { get; set; }
         public Nullable<bool> 註銷 { get; set; }
     

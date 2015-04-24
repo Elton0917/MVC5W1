@@ -164,6 +164,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CustomerBankInfoController.cs" />
     <Compile Include="Controllers\CustomerDatatController.cs" />
+    <Compile Include="Controllers\EasyReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -302,6 +303,8 @@
     <Content Include="Views\CustomerBankInfo\Details.cshtml" />
     <Content Include="Views\CustomerBankInfo\Edit.cshtml" />
     <Content Include="Views\CustomerBankInfo\Index.cshtml" />
+    <Content Include="Views\EasyReport\Index.cshtml" />
+    <Content Include="Views\EasyReport\self_report.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
