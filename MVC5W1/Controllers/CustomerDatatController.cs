@@ -17,7 +17,7 @@ namespace MVC5W1.Controllers
         // GET: CustomerDatat
         public ActionResult Index()
         {
-            return View(db.客戶資料.ToList());
+            return View(db.客戶資料.Where(x => x.註銷 == false || x.註銷 == null).ToList());
         }
 
         // GET: CustomerDatat/Details/5
@@ -110,7 +110,8 @@ namespace MVC5W1.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             客戶資料 客戶資料 = db.客戶資料.Find(id);
-            db.客戶資料.Remove(客戶資料);
+            //db.客戶資料.Remove(客戶資料);
+            客戶資料.註銷 = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

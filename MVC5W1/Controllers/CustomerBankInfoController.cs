@@ -18,7 +18,7 @@ namespace MVC5W1.Controllers
         public ActionResult Index()
         {
             var 客戶銀行資訊 = db.客戶銀行資訊.Include(客 => 客.客戶資料);
-            return View(客戶銀行資訊.ToList());
+            return View(客戶銀行資訊.Where(x => x.註銷 == false || x.註銷 == null).ToList());
         }
 
         // GET: CustomerBankInfo/Details/5
@@ -115,7 +115,8 @@ namespace MVC5W1.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             客戶銀行資訊 客戶銀行資訊 = db.客戶銀行資訊.Find(id);
-            db.客戶銀行資訊.Remove(客戶銀行資訊);
+           // db.客戶銀行資訊.Remove(客戶銀行資訊);
+            客戶銀行資訊.註銷 = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
